@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ital-dark: #433a35;
+  --color-ital-darker: #2e2620;
+  --color-ital-light: #fefefe;
+  --color-ital-cream: #f5f0eb;
+  --color-ital-muted: #a09488;
+  --color-ital-green: #039250;
+  --color-ital-red: #e62031;
+  --color-ital-gold: #c9a96e;
+  --color-ital-stone: #8b7d6b;
+
+  --font-cormorant: var(--font-cormorant-var), Georgia, serif;
+  --font-barlow: var(--font-barlow-var), sans-serif;
+  --font-dm: var(--font-dm-var), sans-serif;
+}
+
+:root {
+  --ital-dark: #433a35;
+  --ital-green: #039250;
+  --ital-red: #e62031;
+  --ital-gold: #c9a96e;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #433a35;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  background-color: #433a35;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #2e2620;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a96e;
+}
+
+/* Selection */
+::selection {
+  background: #039250;
+  color: #fefefe;
+}
+
+/* Italian flag stripe utility */
+.flag-line {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    #039250 33.33%,
+    #fefefe 33.33% 66.66%,
+    #e62031 66.66%
+  );
+}
+
+/* Grain texture overlay */
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
